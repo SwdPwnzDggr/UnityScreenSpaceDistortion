@@ -49,8 +49,8 @@
 				float2 pos = float2(i.uv.x * _MainTex_TexelSize.z, i.uv.y * _MainTex_TexelSize.w);
 
 				//read the displaced shader and get a position
-				pos.x += ((disCol.r * 2.0 -1.0) * 50.025);
-				pos.y += ((disCol.g * 2.0 -1.0) * 50.025);
+				pos.x += ((disCol.r * 2.0 -1.0) * 50.0);
+				pos.y += ((disCol.g * 2.0 -1.0) * 50.0);
 
 				pos.x = pos.x/_MainTex_TexelSize.z;
 				pos.y = pos.y/_MainTex_TexelSize.w;
