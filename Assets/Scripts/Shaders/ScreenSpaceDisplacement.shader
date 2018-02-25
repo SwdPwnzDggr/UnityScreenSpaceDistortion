@@ -4,8 +4,6 @@
 	{
 		_MainTex ("Texture", 2D) = "white" {}
 		_DisplacementTex ("Texture", 2D) = "white" {}
-		//_MainTex ("Texture", 2D) = "white" {}
-		//_MainTex ("Texture", 2D) = "white" {}
 	}
 	SubShader
 	{
@@ -46,11 +44,9 @@
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
 				fixed4 disCol = tex2D(_DisplacementTex, i.uv);
-				// just invert the colors
 
 				//Convert UV space to screen size
 				float2 pos = float2(i.uv.x * _MainTex_TexelSize.z, i.uv.y * _MainTex_TexelSize.w);
-
 
 				//read the displaced shader and get a position
 				pos.x += ((disCol.r * 2.0 -1.0) * 50.025);
@@ -59,16 +55,9 @@
 				pos.x = pos.x/_MainTex_TexelSize.z;
 				pos.y = pos.y/_MainTex_TexelSize.w;
 
-
 				//Get the displaced pixel
 				fixed4 newPix = tex2D(_MainTex,pos);
-
-
-				//Grayscale Conversion
-				float gray = dot(newPix.rgb, fixed3(0.299,0.587,0.114));
-
-				disCol.a = 1;
-				col.rgb = 1 - col.rgb;
+				
 				return newPix;
 			}
 			ENDCG
