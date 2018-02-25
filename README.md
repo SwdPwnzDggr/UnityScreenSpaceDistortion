@@ -5,4 +5,4 @@
 alt="Youtube Vid" width="240" height="180" border="10" /></a>
 
 
-Using http://kpulv.com/308/Dev_Log__Shaders_All_Day/ by Kyle Pulver as a reference I recreated his work from Otter in Unity. 
+Using http://kpulv.com/308/Dev_Log__Shaders_All_Day/ by Kyle Pulver as a reference I ported his ideas into Unity's HLSL Shader Code. 
